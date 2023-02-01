@@ -13,12 +13,12 @@ class ToysController < ApplicationController
 
   def update
     toy = Toy.find_by(id: params[:id])
-    toy.update(toy_params)
+    render json: toy.update(toy_params)
   end
 
   def destroy
     toy = Toy.find_by(id: params[:id])
-    toy.destroy
+    render json: toy.destroy
     head :no_content
   end
 
